@@ -17,11 +17,15 @@ criaElemento();
 button.addEventListener('click', criaElemento);
 
 // Ao clicar em um item da lista, altera a cor de fundo do item para cinza.
+
 const selecionaLi = document.querySelector('#lista-tarefas');
 
-function adicionaGrey(event) {
-  event.target.style.backgroundColor = 'gray';
+function adicionaGray(event) {
+  const itemList = document.querySelectorAll('li');
+  const evento = event.target;
+  for (let index = 0; index < itemList.length; index += 1) {
+    itemList[index].style.backgroundColor = 'white';
+  }
+  evento.style.backgroundColor = 'gray';
 }
-selecionaLi.addEventListener('click', adicionaGrey);
-
-
+selecionaLi.addEventListener('click', adicionaGray);
