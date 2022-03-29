@@ -17,7 +17,6 @@ criaElemento();
 button.addEventListener('click', criaElemento);
 
 // Ao clicar em um item da lista, altera a cor de fundo do item para cinza.
-
 const selecionaLi = document.querySelector('#lista-tarefas');
 
 function adicionaGray(event) {
@@ -29,3 +28,10 @@ function adicionaGray(event) {
   evento.style.backgroundColor = 'gray';
 }
 selecionaLi.addEventListener('click', adicionaGray);
+
+// Risca o item da lista com duplo clique.
+function riscaLi(event) {
+  const evento = event.target;
+  evento.classList.toggle('completed');
+}
+selecionaLi.addEventListener('dblclick', riscaLi);
